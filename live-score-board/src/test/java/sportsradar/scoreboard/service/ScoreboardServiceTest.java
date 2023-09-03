@@ -17,6 +17,10 @@ class ScoreboardServiceTest {
 
     private ScoreboardService serviceUnderTest;
 
+    private static Game getNewTestGame() {
+        return new Game("Trabzonspor", "Beşiktaş");
+    }
+
     @BeforeEach
     void setup() {
         serviceUnderTest = new ScoreboardService();
@@ -106,10 +110,6 @@ class ScoreboardServiceTest {
         // then
         assertThat(gamesInProgress).containsExactly(
                 uruguayItaly, spainBrazil, mexicoCanada, argentinaAustralia, germanyFrance);
-    }
-
-    private static Game getNewTestGame() {
-        return new Game("Trabzonspor", "Beşiktaş");
     }
 
     @Test
